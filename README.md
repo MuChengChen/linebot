@@ -63,8 +63,7 @@ $ pip install selenium
 ### Execute the Line Bot:
 * Find views.py in moneyapp folder and open it.
 * In views.py, change line 72 to your own PATH.
-
-![](https://i.imgur.com/wMhuEYC.png) (just input the PATH exclude \invoicehero)
+  (just input the PATH exclude \linebot)
 * Open terminal and enter `$ python manage.py runserver`.
 * Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 

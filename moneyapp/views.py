@@ -176,7 +176,7 @@ def callback(request):
                                     'name': filename,
                                     'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                                     }
-                                media = MediaFileUpload(location + '/invoicehero/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
+                                media = MediaFileUpload(location + '/linebot/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
                                 id = service.files().create(
                                     body=file_metadata,
                                     media_body=media,
@@ -213,7 +213,7 @@ def callback(request):
                                     'name': filename,
                                     'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                                 }
-                                media = MediaFileUpload(location + '/invoicehero/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
+                                media = MediaFileUpload(location + '/linebot/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
                                 id = service.files().create(
                                     body=file_metadata,
                                     media_body=media,
@@ -243,7 +243,7 @@ def callback(request):
                                     'name': filename,
                                     'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                                 }
-                                media = MediaFileUpload(location + '/invoicehero/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
+                                media = MediaFileUpload(location + '/linebot/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
                                 id = service.files().create(
                                     body=file_metadata,
                                     media_body=media,
@@ -268,7 +268,7 @@ def callback(request):
                                 'name': filename,
                                 'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                             }
-                            media = MediaFileUpload(location + '/invoicehero/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
+                            media = MediaFileUpload(location + '/linebot/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
                             id = service.files().create(
                                 body=file_metadata,
                                 media_body=media,
@@ -298,7 +298,7 @@ def callback(request):
                                     'name': filename,
                                     'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                                 }
-                                media = MediaFileUpload(location + '/invoicehero/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
+                                media = MediaFileUpload(location + '/linebot/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
                                 id = service.files().create(
                                     body=file_metadata,
                                     media_body=media,
@@ -321,7 +321,7 @@ def callback(request):
                                 'name': filename,
                                 'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                             }
-                            media = MediaFileUpload(location + '/invoicehero/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
+                            media = MediaFileUpload(location + '/linebot/{}'.format(filename), mimetype='image/png')  # 圖片在本機的位置
                             id = service.files().create(
                                 body=file_metadata,
                                 media_body=media,
@@ -353,7 +353,7 @@ def callback(request):
                                     'name': filename,
                                     'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                                 }
-                                media = MediaFileUpload(location + '/invoicehero/{}'.format(filename),
+                                media = MediaFileUpload(location + '/linebot/{}'.format(filename),
                                                         mimetype='image/png')  # 圖片在本機的位置
                                 id = service.files().create(
                                     body=file_metadata,
@@ -376,7 +376,7 @@ def callback(request):
                                 'name': filename,
                                 'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                             }
-                            media = MediaFileUpload(location + '/invoicehero/{}'.format(filename),
+                            media = MediaFileUpload(location + '/linebot/{}'.format(filename),
                                                     mimetype='image/png')  # 圖片在本機的位置
                             id = service.files().create(
                                 body=file_metadata,
@@ -407,7 +407,7 @@ def callback(request):
                                     'name': filename,
                                     'parents': ["1C-84x5gomshiGb1wxDxemewMyLwwsU1m"]
                                 }
-                                media = MediaFileUpload('D:/CTPS/herokuenv/invoicehero/{}'.format(filename),
+                                media = MediaFileUpload('/linebot/{}'.format(filename),
                                                         mimetype='image/png')  # 圖片在本機的位置
                                 id = service.files().create(
                                     body=file_metadata,
@@ -499,7 +499,7 @@ def callback(request):
                             i = 0
                             while i < 9:
                                 a = uid + str(i+1) + ".png"
-                                filepath = location + "/invoicehero/" + a
+                                filepath = location + "/linebot/" + a
                                 if b[i] == "good":
                                     try:
                                         os.remove(filepath)
@@ -622,7 +622,7 @@ def callback(request):
                         pd.set_option('display.max_colwidth', 200)
                         pd.set_option('display.width', None)
 
-                        driver = webdriver.Chrome(location + '/invoicehero/chromedriver.exe')
+                        driver = webdriver.Chrome(location + '/linebot/chromedriver.exe')
                         url = 'https://feebee.com.tw/'
 
                         def url_pagesource(text):

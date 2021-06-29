@@ -60,6 +60,78 @@ $ pip install beautifulsoup4
 $ pip install regex
 $ pip install selenium
 ```
+### Richmenu
+
+1.另外創一個叫richmenu.py的檔案
+輸入以下程式碼 run 一次
+會得到richmenu id
+```python=
+import requests
+import json
+
+headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}       # 打上你的 access token
+
+body = {
+    "size": {"width": 2500, "height": 1686},
+    "selected": "true",
+    "name": "Controller",
+    "chatBarText": "選單",
+    "areas":[
+        {
+          "bounds": {"x": 0, "y": 0, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "記支出"}
+        },
+        {
+          "bounds": {"x": 833, "y": 0, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "圖表"}
+        },
+        {
+          "bounds": {"x": 1666, "y": 0, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "比價"}
+        },
+        {
+          "bounds": {"x": 0, "y": 843, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "記收入"}
+        },
+        {
+          "bounds": {"x": 833, "y": 843, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "修改資料"}
+        },
+        {
+          "bounds": {"x": 1666, "y": 843, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "查詢"}
+        }
+    ]
+  }
+
+req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu',
+                       headers=headers,data=json.dumps(body).encode('utf-8'))
+
+print(req.text)                    #  得到選單 id
+
+```
+2.再創一個叫rich2.py的檔案
+輸入以下程式碼
+run 一次
+圖片要跟rich2.py放在同一層資料夾
+```
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+
+line_bot_api = LineBotApi('your channel access token')         # 改成自己的token
+
+with open("98916.jpg", 'rb') as f:                              # 輸入圖片檔名
+    line_bot_api.set_rich_menu_image("your rich menu id", "image/jpeg", f)        # 輸入richmenu id
+
+import requests
+headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}         # 改成自己的token
+req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/your rich menu id',
+                       headers=headers)                          # 輸入richmenu id
+
+print(req.text)
+```
+
 ### Execute the Line Bot:
 * Find views.py in moneyapp folder and open it.
 * In views.py, change line 72 to your own PATH.

@@ -113,7 +113,7 @@ print(req.text)                    #  得到選單 id
 2.再創一個叫rich2.py的檔案
 輸入以下程式碼
 run 一次
-圖片要跟rich2.py放在同一層資料夾
+圖片(richmenu.jpg)要跟rich2.py放在同一層資料夾
 ```
 from linebot import (
     LineBotApi, WebhookHandler
@@ -121,7 +121,7 @@ from linebot import (
 
 line_bot_api = LineBotApi('your channel access token')         # 改成自己的token
 
-with open("98916.jpg", 'rb') as f:                              # 輸入圖片檔名
+with open("richmenu.jpg", 'rb') as f:                              # 輸入圖片檔名
     line_bot_api.set_rich_menu_image("your rich menu id", "image/jpeg", f)        # 輸入richmenu id
 
 import requests

@@ -56,7 +56,7 @@ $ pip install numpy
 $ pip install dateutil
 $ pip install apscheduler
 $ pip install gspread
-$ pip install oauth2client.service_account
+$ pip install --upgrade oauth2client
 $ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 $ pip install beautifulsoup4
 $ pip install regex

@@ -149,6 +149,77 @@ print(req.text)
 1. Copy the channel secret and channel access token of your account's basic setting.
 2. Go to '回應設定' in you linebot setting, close '自動回應訊息' and open 'Webhook'.
 
+### Richmenu (Make the Linebot have rich menus(圖文選單))
+
+1. Create another file named 'richmenu.py' and enter the following code in it.
+Run richmenu.py on terminal, then get the richmenu id.
+```
+python=
+import requests
+import json
+
+headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}       # 打上你的 access token
+
+body = {
+    "size": {"width": 2500, "height": 1686},
+    "selected": "true",
+    "name": "Controller",
+    "chatBarText": "選單",
+    "areas":[
+        {
+          "bounds": {"x": 0, "y": 0, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "記支出"}
+        },
+        {
+          "bounds": {"x": 833, "y": 0, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "圖表"}
+        },
+        {
+          "bounds": {"x": 1666, "y": 0, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "比價"}
+        },
+        {
+          "bounds": {"x": 0, "y": 843, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "記收入"}
+        },
+        {
+          "bounds": {"x": 833, "y": 843, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "修改資料"}
+        },
+        {
+          "bounds": {"x": 1666, "y": 843, "width": 833, "height": 833},
+          "action": {"type": "message", "text": "查詢"}
+        }
+    ]
+  }
+
+req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu',
+                       headers=headers,data=json.dumps(body).encode('utf-8'))
+
+print(req.text)                    #  得到選單 id
+
+```
+2. Create another file named rich2.py and enter the following code in it.
+Run rich2.py on terminal.
+* Picture(richmenu.jpg) need to be in the same folder with rich2.py.
+```
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+
+line_bot_api = LineBotApi('your channel access token')         # 改成自己的token
+
+with open("richmenu.jpg", 'rb') as f:                              # 輸入圖片檔名
+    line_bot_api.set_rich_menu_image("your rich menu id", "image/jpeg", f)        # 輸入richmenu id
+
+import requests
+headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}         # 改成自己的token
+req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/your rich menu id',
+                       headers=headers)                          # 輸入richmenu id
+
+print(req.text)
+```
+
 ### Execute the Line Bot:
 1. Open **first** terminal and input `$ docker run -it tim50687/linebot_final_project`.
 2. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 

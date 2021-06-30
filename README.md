@@ -34,8 +34,8 @@ $ pip install line-bot-sdk
 ```
 * Create a linebot account 
 1. Copy the channel secret and channel access token of your account's basic setting to connect python script and Line Bot.
-2. Open final project folder and open setting.py.
-3. Change line 24 and 25 to users' channel secret and channel access token.
+2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+3. Go to 回應設定 in you linebot setting, close 自動回應訊息 and open Webhook.
 
 * Ngrok
 1. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version.  
@@ -61,7 +61,7 @@ $ pip install beautifulsoup4
 $ pip install regex
 $ pip install selenium
 ```
-### Richmenu
+### Richmenu (Make the Linebot have rich menus(圖文選單))
 
 1. Create another file named 'richmenu.py' and enter the following code in it.
 Run richmenu.py on terminal, then get the richmenu id.
@@ -146,8 +146,8 @@ print(req.text)
 * Open terminal and input `docker pull tim50687/linebot_final_project`
 * Create a linebot account 
 1. Copy the channel secret and channel access token of your account's basic setting to connect python script and Line Bot.
-2. Open final project folder and open setting.py.
-3. Change line 24 and 25 to users' channel secret and channel access token.
+2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+3. Go to '回應設定' in you linebot setting, close '自動回應訊息' and open 'Webhook'.
 
 ### Execute the Line Bot:
 1. Open first terminal and input `docker run -it tim50687/linebot_final_project`.

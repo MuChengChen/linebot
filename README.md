@@ -4,6 +4,7 @@
 * [About The Project](#about-the-project)
 * [Technologies](#technologies)
 * [Getting Started](#getting-started)
+* [Getting Started with docker](#getting-started-with-docker)
 * [Check](#check)
 
 ## About The Project
@@ -62,10 +63,10 @@ $ pip install selenium
 ```
 ### Richmenu
 
-1.另外創一個叫richmenu.py的檔案
-輸入以下程式碼 run 一次
-會得到richmenu id
-```python=
+1. Create another file named 'richmenu.py' and enter the following code in it.
+Run richmenu.py on terminal, then get the richmenu id.
+```
+python=
 import requests
 import json
 
@@ -110,10 +111,9 @@ req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu',
 print(req.text)                    #  得到選單 id
 
 ```
-2.再創一個叫rich2.py的檔案
-輸入以下程式碼
-run 一次
-圖片(richmenu.jpg)要跟rich2.py放在同一層資料夾
+2. Create another file named rich2.py and enter the following code in it.
+Run rich2.py on terminal.
+* Picture(richmenu.jpg) need to be in the same folder with rich2.py.
 ```
 from linebot import (
     LineBotApi, WebhookHandler
@@ -135,9 +135,34 @@ print(req.text)
 ### Execute the Line Bot:
 * Find views.py in moneyapp folder and open it.
 * In views.py, change line 72 to your own PATH.
-  (just input the PATH where linebot at but exclude \linebot)
+  (just input the PATH where linebot at but exclude \invoicehero)
 * Open terminal and enter `$ python manage.py runserver`.
 * Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+
+## Getting Started with docker
+
+### Prerequisite
+* Install docker in your system
+* Open terminal and input `docker pull tim50687/linebot_final_project`
+* Create a linebot account 
+1. Copy the channel secret and channel access token of your account's basic setting to connect python script and Line Bot.
+2. Open final project folder and open setting.py.
+3. Change line 24 and 25 to users' channel secret and channel access token.
+
+### Execute the Line Bot:
+1. Open first terminal and input `docker run -it tim50687/linebot_final_project`.
+2. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
+3. Open second terminal and input `docker exec -it tim50687/linebot_final_project /bin/bash`. 
+4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on second terminal.
+![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_e4f71cf1b9cde8300de6b8db6919663d.png)
+5. Copy the link generate by ngrok to Webhook URL in Line Messaging API and add `/callback`.
+6. Open Use webhook
+![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_d266b21c2251bbcaf372b6c18742e492.png)
+7. Go back to first terminal, find views.py in moneyapp folder and open it.
+8. In views.py, change line 72 to your own PATH.
+  (just input the PATH where linebot at but exclude \invoicehero)
+9. Open terminal and enter `$ python3.9 manage.py runserver`.
+10. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 
 ## Check
 Check whether the input data has been correctly upload or not.

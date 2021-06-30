@@ -146,23 +146,24 @@ print(req.text)
 * Open terminal and input `$ docker pull tim50687/linebot_final_project`
 * Create a linebot account 
 1. Copy the channel secret and channel access token of your account's basic setting.
-2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
-3. Go to '回應設定' in you linebot setting, close '自動回應訊息' and open 'Webhook'.
+2. Go to '回應設定' in you linebot setting, close '自動回應訊息' and open 'Webhook'.
 
 ### Execute the Line Bot:
-1. Open -first- terminal and input `$ docker run -it tim50687/linebot_final_project`.
+1. Open **first** terminal and input `$ docker run -it tim50687/linebot_final_project`.
 2. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
-3. Open second terminal and input `docker exec -it tim50687/linebot_final_project /bin/bash`. 
+3. Open **second** terminal and input `docker exec -it tim50687/linebot_final_project /bin/bash`. 
 4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on second terminal.
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_e4f71cf1b9cde8300de6b8db6919663d.png)
 5. Copy the link generate by ngrok to Webhook URL in Line Messaging API and add `/callback`.
 6. Open Use webhook
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_d266b21c2251bbcaf372b6c18742e492.png)
-7. Go back to first terminal, find views.py in moneyapp folder and open it.
-8. In views.py, change line 72 to your own PATH.
+* Revise the code 
+1. Go back to **first** terminal, find views.py in moneyapp folder and open it.
+2. In views.py, change line 72 to your own PATH.
   (just input the PATH where invoicehero at but exclude \invoicehero)
-9. Open terminal and enter `$ python3.9 manage.py runserver`.
-10. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+3. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+4. Open terminal and enter `$ python3.9 manage.py runserver`.
+5. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 
 ## Check
 Check whether the input data has been correctly upload or not.

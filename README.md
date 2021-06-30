@@ -33,7 +33,7 @@ $ pip install django
 $ pip install line-bot-sdk
 ```
 * Create a linebot account 
-1. Copy the channel secret and channel access token of your account's basic setting to connect python script and Line Bot.
+1. Copy the channel secret and channel access token of your account's basic setting.
 2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
 3. Go to 回應設定 in you linebot setting, close 自動回應訊息 and open Webhook.
 
@@ -145,7 +145,7 @@ print(req.text)
 * Install docker in your system
 * Open terminal and input `docker pull tim50687/linebot_final_project`
 * Create a linebot account 
-1. Copy the channel secret and channel access token of your account's basic setting to connect python script and Line Bot.
+1. Copy the channel secret and channel access token of your account's basic setting.
 2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
 3. Go to '回應設定' in you linebot setting, close '自動回應訊息' and open 'Webhook'.
 

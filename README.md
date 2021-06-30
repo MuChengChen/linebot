@@ -135,7 +135,7 @@ print(req.text)
 ### Execute the Line Bot:
 * Find views.py in moneyapp folder and open it.
 * In views.py, change line 72 to your own PATH.
-  (just input the PATH exclude \linebot)
+  (just input the PATH where linebot at but exclude \linebot)
 * Open terminal and enter `$ python manage.py runserver`.
 * Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 

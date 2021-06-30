@@ -32,6 +32,7 @@ This is an example of how you may give instructions on setting up your project l
 $ pip install django
 $ pip install line-bot-sdk
 ```
+* Git clone this project.
 * Create a linebot account 
 1. Copy the channel secret and channel access token of your account's basic setting.
 2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.

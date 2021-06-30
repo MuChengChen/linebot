@@ -237,8 +237,9 @@ print(req.text)
 2. In views.py, change line 72 to your own PATH.
   (just input the PATH where invoicehero at but exclude \invoicehero)
 3. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
-4. Open terminal and enter `$ python3.9 manage.py runserver`.
-5. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+* Execution
+1. Open terminal and enter `$ python3.9 manage.py runserver`.
+2. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 
 ## Check
 Check whether the input data has been correctly upload or not.

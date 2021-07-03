@@ -151,8 +151,9 @@ https://hub.docker.com/repository/docker/tim50687/linebot_final_project
 * Create a linebot account 
 1. Copy the channel secret and channel access token of your account's basic setting to a notebook. It will be used later.
 2. Go to '回應設定' in your LINE Official Account Manager, close '自動回應訊息' and open 'Webhook'.
-![](https://i.imgur.com/CdcdXuu.jpg)
-![](https://i.imgur.com/Szh55m5.jpg)
+
+<img src="https://i.imgur.com/CdcdXuu.jpg" width="40%"/> <img src="https://i.imgur.com/Szh55m5.jpg" width="40%"/>
+
 ### Richmenu (Make the Linebot have rich menus(圖文選單))
 
 1. Create another file named 'richmenu.py' and enter the following code in it.

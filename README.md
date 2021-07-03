@@ -155,15 +155,15 @@ https://hub.docker.com/repository/docker/tim50687/linebot_final_project
 <img src="https://i.imgur.com/CdcdXuu.jpg" width="40%"/> <img src="https://i.imgur.com/Szh55m5.jpg" width="40%"/>
 
 ### Richmenu (Make the Linebot have rich menus(圖文選單))
-
-1. Create another file named 'richmenu.py' and enter the following code in it.
+* This can be create at 
+1. Create a file named 'richmenu.py' and enter the following code in it.
 Run richmenu.py on terminal, then get the richmenu id.
 ```
 # -*- coding: UTF-8 -*-
 import requests
 import json
 
-headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}       # 打上你的 access token
+headers = {"Authorization":"Bearer ~your channel access token~","Content-Type":"application/json"}       # 打上你的 access token
 
 body = {
     "size": {"width": 2500, "height": 1686},
@@ -213,18 +213,19 @@ from linebot import (
     LineBotApi, WebhookHandler
 )
 
-line_bot_api = LineBotApi('your channel access token')         # 改成自己的token
+line_bot_api = LineBotApi('~your channel access token~')         # 改成自己的token
 
 with open("richmenu.jpg", 'rb') as f:                              # 輸入圖片檔名
-    line_bot_api.set_rich_menu_image("your rich menu id", "image/jpeg", f)        # 輸入richmenu id
+    line_bot_api.set_rich_menu_image("~your rich menu id~", "image/jpeg", f)        # 輸入richmenu id
 
 import requests
-headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}         # 改成自己的token
-req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/your rich menu id',
+headers = {"Authorization":"Bearer ~your channel access token~","Content-Type":"application/json"}         # 改成自己的token
+req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/~your rich menu id~',
                        headers=headers)                          # 輸入richmenu id
 
 print(req.text)
 ```
+3. Go to your Line bot APP to check if it has work.
 
 ### Execute the Line Bot:
 1. Open **first** terminal and input `$ docker run -it tim50687/linebot_final_project`.

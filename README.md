@@ -155,15 +155,15 @@ https://hub.docker.com/repository/docker/tim50687/linebot_final_project
 <img src="https://i.imgur.com/CdcdXuu.jpg" width="40%"/> <img src="https://i.imgur.com/Szh55m5.jpg" width="40%"/>
 
 ### Richmenu (Make the Linebot have rich menus(圖文選單))
-* This can be create at 
-1. Create a file named 'richmenu.py' and enter the following code in it.
+* This can be done at project's folder or out of project's folder, it doesn't matter. 
+1. Create a file named 'richmenu.py', enter the following code in it and change some code by tips.
 Run richmenu.py on terminal, then get the richmenu id.
 ```
 # -*- coding: UTF-8 -*-
 import requests
 import json
 
-headers = {"Authorization":"Bearer ~your channel access token~","Content-Type":"application/json"}       # 打上你的 access token
+headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}       # 移除xxxxx 打上你的 access token
 
 body = {
     "size": {"width": 2500, "height": 1686},
@@ -204,28 +204,31 @@ req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu',
 print(req.text)                    #  得到選單 id
 
 ```
-2. Create another file named rich2.py and enter the following code in it.
-Run rich2.py on terminal.
+2. Create another file named rich2.py, enter the following code in it and change some code by tips.
+* You will need to download 'richmenu.jpg' from https://playlab.computing.ncku.edu.tw:4001/group_2_final_project/linebot/blob/master/richmenu.jpg before running. 
 * Picture(richmenu.jpg) need to be in the same folder with rich2.py.
+
+Run rich2.py on terminal.
 ```
 # -*- coding: UTF-8 -*-
 from linebot import (
     LineBotApi, WebhookHandler
 )
 
-line_bot_api = LineBotApi('~your channel access token~')         # 改成自己的token
+line_bot_api = LineBotApi('xxxxx')         # 移除xxxxx 改成自己的token
 
 with open("richmenu.jpg", 'rb') as f:                              # 輸入圖片檔名
-    line_bot_api.set_rich_menu_image("~your rich menu id~", "image/jpeg", f)        # 輸入richmenu id
+    line_bot_api.set_rich_menu_image("xxxxx", "image/jpeg", f)        # 移除xxxxx 輸入richmenu id
 
 import requests
-headers = {"Authorization":"Bearer ~your channel access token~","Content-Type":"application/json"}         # 改成自己的token
-req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/~your rich menu id~',
-                       headers=headers)                          # 輸入richmenu id
+headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}         # 移除xxxxx 改成自己的token
+req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/xxxxx',
+                       headers=headers)                          # 移除xxxxx 輸入richmenu id
 
 print(req.text)
 ```
 3. Go to your Line bot APP to check if it has work.
+<img src="https://i.imgur.com/fvAASDR.jpg" width="20%"/>
 
 ### Execute the Line Bot:
 1. Open **first** terminal and input `$ docker run -it tim50687/linebot_final_project`.

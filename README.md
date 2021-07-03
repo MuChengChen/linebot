@@ -226,7 +226,7 @@ print(req.text)
 ### Execute the Line Bot:
 1. Open **first** terminal and input `$ docker run -it tim50687/linebot_final_project`.
 2. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
-3. Open **second** terminal and input `docker exec -it tim50687/linebot_final_project /bin/bash`. 
+3. Open **second** terminal and input `$ docker exec -it tim50687/linebot_final_project /bin/bash`. 
 4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on **second** terminal.
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_e4f71cf1b9cde8300de6b8db6919663d.png)
 5. Copy the link generate by ngrok to Webhook URL in Line Messaging API and add `/callback`.

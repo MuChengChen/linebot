@@ -67,7 +67,7 @@ $ pip install selenium
 1. Create another file named 'richmenu.py' and enter the following code in it.
 Run richmenu.py on terminal, then get the richmenu id.
 ```
-python=
+
 import requests
 import json
 

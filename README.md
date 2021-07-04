@@ -261,22 +261,19 @@ print(req.text)
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_d266b21c2251bbcaf372b6c18742e492.png)
 
 * Revise the code and Execute Linebot APP
-1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`, there's a folder named moneyapp in invoicehero folder, and open views.py in moneyapp folder.
-2. In views.py, change line 76 to your own PATH. (just input the PATH where invoicehero at but exclude \invoicehero) 
+1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`.
 
-   ![](https://i.imgur.com/6YFE8uy.jpg)
-   <img src="https://i.imgur.com/wNrBbtg.jpg" width="80%"/>
-
-3. Go to finalproject folder in invoicehero folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+2. Go to finalproject folder in invoicehero folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
 
 ![](https://i.imgur.com/PhfB0Ju.jpg)
 
-4. Go back to invoicehero folder and input `$ chmod 755 chromedriver`. Then, input `$ python3.9 manage.py runserver`.
-5. Wait until it shows the following message:
+3. Go back to invoicehero folder. Then, input `$ python3.9 manage.py runserver`.
+
+4. Wait until it shows the following message:
 
 ![](https://i.imgur.com/xWbwovH.jpg)
 
-6. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+5. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 
 ![](https://i.imgur.com/7J7cVVJ.jpg)
 

@@ -34,9 +34,10 @@ $ pip install line-bot-sdk
 ```
 * Git clone this project.
 * Create a linebot account 
-1. Copy the channel secret and channel access token of your account's basic setting.
-2. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
-3. Go to **回應設定** in you linebot setting, close **自動回應訊息** and open **Webhook**.
+1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. It will be used later.
+2. Go to '回應設定' in your LINE Official Account Manager, close '自動回應訊息' and open 'Webhook'.
+
+<img src="https://i.imgur.com/CdcdXuu.jpg" width="40%"/> <img src="https://i.imgur.com/Szh55m5.jpg" width="40%"/>
 
 * Ngrok
 1. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version.  
@@ -63,15 +64,15 @@ $ pip install regex
 $ pip install selenium
 ```
 ### Richmenu (Make the Linebot have rich menus(圖文選單))
-
-1. Create another file named 'richmenu.py' and enter the following code in it.
+* This can be done at project's folder or out of project's folder, it doesn't matter. 
+1. Create a file named 'richmenu.py', enter the following code in it and change some code by tips.
 Run richmenu.py on terminal, then get the richmenu id.
 ```
-
+# -*- coding: UTF-8 -*-
 import requests
 import json
 
-headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}       # 打上你的 access token
+headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}       # 移除xxxxx 打上你的 access token
 
 body = {
     "size": {"width": 2500, "height": 1686},
@@ -112,33 +113,51 @@ req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu',
 print(req.text)                    #  得到選單 id
 
 ```
-2. Create another file named rich2.py and enter the following code in it.
-Run rich2.py on terminal.
+2. Create another file named rich2.py, enter the following code in it and change some code by tips.
+* You will need to download 'richmenu.jpg' from https://playlab.computing.ncku.edu.tw:4001/group_2_final_project/linebot/blob/master/richmenu.jpg before running. 
 * Picture(richmenu.jpg) need to be in the same folder with rich2.py.
+
+Run rich2.py on terminal.
 ```
+# -*- coding: UTF-8 -*-
 from linebot import (
     LineBotApi, WebhookHandler
 )
 
-line_bot_api = LineBotApi('your channel access token')         # 改成自己的token
+line_bot_api = LineBotApi('xxxxx')         # 移除xxxxx 改成自己的token
 
 with open("richmenu.jpg", 'rb') as f:                              # 輸入圖片檔名
-    line_bot_api.set_rich_menu_image("your rich menu id", "image/jpeg", f)        # 輸入richmenu id
+    line_bot_api.set_rich_menu_image("xxxxx", "image/jpeg", f)        # 移除xxxxx 輸入richmenu id
 
 import requests
-headers = {"Authorization":"Bearer your channel access token","Content-Type":"application/json"}         # 改成自己的token
-req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/your rich menu id',
-                       headers=headers)                          # 輸入richmenu id
+headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}         # 移除xxxxx 改成自己的token
+req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/xxxxx',
+                       headers=headers)                          # 移除xxxxx 輸入richmenu id
 
 print(req.text)
 ```
+3. Go to your Line bot APP to check if it has work.
+<img src="https://i.imgur.com/fvAASDR.jpg" width="20%"/>
+
 
 ### Execute the Line Bot:
-* Find views.py in moneyapp folder and open it.
-* In views.py, change line 72 to your own PATH.
-  (just input the PATH where git clone at but exclude \invoicehero)
-* Open terminal and enter `$ python manage.py runserver`.
+* There's a folder named moneyapp in invoicehero folder, and open views.py in moneyapp folder.
+* In views.py, change line 76 to your own PATH. (just input the PATH where invoicehero at but exclude \invoicehero) 
+
+   ![](https://i.imgur.com/6YFE8uy.jpg)
+   <img src="https://i.imgur.com/wNrBbtg.jpg" width="80%"/>
+
+* Go to finalproject folder in invoicehero folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+
+![](https://i.imgur.com/PhfB0Ju.jpg)
+
+* Go back to invoicehero folder and input `$ python manage.py runserver`.
+* Wait until it shows the following message:
+
+![](https://i.imgur.com/xWbwovH.jpg)
 * Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+
+![](https://i.imgur.com/7J7cVVJ.jpg)
 
 ## Getting Started with docker
 
@@ -232,7 +251,7 @@ print(req.text)
 
 ### Execute the Line Bot:
 1. Open terminal and input `$ docker run -it tim50687/linebot_final_project`.
-2. Open second terminal, input `$ docker ps` and copy the **CONTAINER ID** of tim5067/linebot_final_project.
+2. Open **second** terminal, input `$ docker ps` and copy the **CONTAINER ID** of tim5067/linebot_final_project.
    Then, input `$ docker exec -it xxxxx /bin/bash` on your second terminal. Change xxxxx to your **CONTAINER ID**.
 3. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
 4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on **second** terminal.
@@ -241,7 +260,7 @@ print(req.text)
 6. Open Use webhook
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_d266b21c2251bbcaf372b6c18742e492.png)
 
-* Revise the code and Execution
+* Revise the code and Execute Linebot APP
 1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`, there's a folder named moneyapp in invoicehero folder, and open views.py in moneyapp folder.
 2. In views.py, change line 76 to your own PATH. (just input the PATH where invoicehero at but exclude \invoicehero) 
 

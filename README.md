@@ -234,13 +234,13 @@ from linebot import (
     LineBotApi, WebhookHandler
 )
 
-line_bot_api = LineBotApi('xxxxx')         # 移除xxxxx 改成自己的token
+line_bot_api = LineBotApi('xxxxx')         # 移除xxxxx 改成自己的 access token
 
 with open("richmenu.jpg", 'rb') as f:                              # 輸入圖片檔名
     line_bot_api.set_rich_menu_image("xxxxx", "image/jpeg", f)        # 移除xxxxx 輸入richmenu id
 
 import requests
-headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}         # 移除xxxxx 改成自己的token
+headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}         # 移除xxxxx 改成自己的 access token
 req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/xxxxx',
                        headers=headers)                          # 移除xxxxx 輸入richmenu id
 

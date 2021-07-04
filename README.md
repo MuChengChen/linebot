@@ -231,22 +231,35 @@ print(req.text)
 <img src="https://i.imgur.com/fvAASDR.jpg" width="20%"/>
 
 ### Execute the Line Bot:
-1. Open **first** terminal and input `$ docker run -it tim50687/linebot_final_project`.
-2. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
-3. Open **second** terminal and input `$ docker exec -it tim50687/linebot_final_project /bin/bash`. 
+1. Open terminal and input `$ docker run -it tim50687/linebot_final_project`.
+2. Open second terminal, input `$ docker ps` and copy the **CONTAINER ID** of tim5067/linebot_final_project.
+   Then, input `$ docker exec -it xxxxx /bin/bash` on your second terminal. Change xxxxx to your **CONTAINER ID**.
+3. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
 4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on **second** terminal.
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_e4f71cf1b9cde8300de6b8db6919663d.png)
 5. Copy the link generate by ngrok to Webhook URL in Line Messaging API and add `/callback`.
 6. Open Use webhook
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_d266b21c2251bbcaf372b6c18742e492.png)
-* Revise the code 
-1. Go back to **first** terminal, find views.py in moneyapp folder and open it.
-2. In views.py, change line 72 to your own PATH.
-  (just input the PATH where invoicehero at but exclude \invoicehero)
-3. Open final project folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
-* Execution
-1. Open terminal and enter `$ python3.9 manage.py runserver`.
-2. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+
+* Revise the code and Execution
+1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`, there's a folder named moneyapp in invoicehero folder, and open views.py in moneyapp folder.
+2. In views.py, change line 76 to your own PATH. (just input the PATH where invoicehero at but exclude \invoicehero) 
+
+   ![](https://i.imgur.com/6YFE8uy.jpg)
+   <img src="https://i.imgur.com/wNrBbtg.jpg" width="80%"/>
+
+3. Go to finalproject folder in invoicehero folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+
+![](https://i.imgur.com/PhfB0Ju.jpg)
+
+4. Go back to invoicehero folder and input `$ chmod 755 chromedriver`. Then, input `$ python3.9 manage.py runserver`.
+5. Wait until it shows the following message:
+
+![](https://i.imgur.com/xWbwovH.jpg)
+
+6. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+
+![](https://i.imgur.com/7J7cVVJ.jpg)
 
 ## Check
 Check whether the input data has been correctly upload or not.

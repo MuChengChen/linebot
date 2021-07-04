@@ -132,7 +132,7 @@ with open("richmenu.jpg", 'rb') as f:                              # 輸入圖�
 import requests
 headers = {"Authorization":"Bearer xxxxx","Content-Type":"application/json"}         # 移除xxxxx 改成自己的token
 req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/xxxxx',
-                       headers=headers)                          # 移除xxxxx 輸入richmenu id
+                       headers=headers)                                              # 移除xxxxx 輸入richmenu id
 
 print(req.text)
 ```

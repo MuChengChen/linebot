@@ -162,14 +162,14 @@ print(req.text)
 ## Getting Started with docker
 
 ### Docker container website
-https://hub.docker.com/repository/docker/tim50687/linebot_final
+https://hub.docker.com/repository/docker/tim50687/final_project_linebot
 
 ### Dockerfile
 https://hackmd.io/mRcfgf36So62x0v8V9UlRQ?view
 
 ### Prerequisite
 * Install docker in your system
-* Open terminal and run `$ docker pull tim50687/linebot_final_project`
+* Open terminal and run `$ docker pull tim50687/final_project_linebot`
 * Create a linebot account 
 1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. It will be used later.
 2. Go to '回應設定' in your LINE Official Account Manager, close '自動回應訊息' and open 'Webhook'.
@@ -253,8 +253,8 @@ print(req.text)
 <img src="https://i.imgur.com/fvAASDR.jpg" width="20%"/>
 
 ### Execute the Line Bot:
-1. Open terminal and run `$ docker run -it tim50687/linebot_final_project`.
-2. Open **second** terminal, run `$ docker ps` and copy the **CONTAINER ID** of tim5067/linebot_final_project.
+1. Open terminal and run `$ docker run -it tim50687/final_project_linebot`.
+2. Open **second** terminal, run `$ docker ps` and copy the **CONTAINER ID** of tim50687/final_project_linebot.
    Then, run `$ docker exec -it xxxxx /bin/bash` on your second terminal. Change xxxxx to your **CONTAINER ID**.
 3. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
 4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on **second** terminal.
@@ -264,7 +264,7 @@ print(req.text)
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_d266b21c2251bbcaf372b6c18742e492.png)
 
 * Revise the code and Execute Linebot APP
-1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`.
+1. Go back to terminal which you've run `$ docker run -it tim50687/final_project_linebot`.
 
 2. Find changetoken.sh in /root. And change **abc** with your **channel access token** and **channel secret**.
 ![](https://i.imgur.com/cWb9ShR.jpg)

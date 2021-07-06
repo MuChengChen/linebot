@@ -151,7 +151,7 @@ print(req.text)
 
 ![](https://i.imgur.com/PhfB0Ju.jpg)
 
-* Go back to invoicehero folder and input `$ python manage.py runserver`.
+* Go back to invoicehero folder and run `$ python manage.py runserver`.
 * Wait until it shows the following message:
 
 ![](https://i.imgur.com/xWbwovH.jpg)
@@ -169,7 +169,7 @@ https://hackmd.io/mRcfgf36So62x0v8V9UlRQ?view
 
 ### Prerequisite
 * Install docker in your system
-* Open terminal and input `$ docker pull tim50687/linebot_final_project`
+* Open terminal and run `$ docker pull tim50687/linebot_final_project`
 * Create a linebot account 
 1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. It will be used later.
 2. Go to '回應設定' in your LINE Official Account Manager, close '自動回應訊息' and open 'Webhook'.
@@ -253,9 +253,9 @@ print(req.text)
 <img src="https://i.imgur.com/fvAASDR.jpg" width="20%"/>
 
 ### Execute the Line Bot:
-1. Open terminal and input `$ docker run -it tim50687/linebot_final_project`.
-2. Open **second** terminal, input `$ docker ps` and copy the **CONTAINER ID** of tim5067/linebot_final_project.
-   Then, input `$ docker exec -it xxxxx /bin/bash` on your second terminal. Change xxxxx to your **CONTAINER ID**.
+1. Open terminal and run `$ docker run -it tim50687/linebot_final_project`.
+2. Open **second** terminal, run `$ docker ps` and copy the **CONTAINER ID** of tim5067/linebot_final_project.
+   Then, run `$ docker exec -it xxxxx /bin/bash` on your second terminal. Change xxxxx to your **CONTAINER ID**.
 3. Sign up for [ngrok](https://ngrok.com/) and download file which is coressponding to your computer's version. 
 4. Enter `$ ngrok authtoken <your authtoken>` and `$ ngrok http 8000` on **second** terminal.
 ![](https://playlab.computing.ncku.edu.tw:3001/uploads/upload_e4f71cf1b9cde8300de6b8db6919663d.png)
@@ -269,9 +269,9 @@ print(req.text)
 2. Find changetoken.sh in /root. And change **abc** with your **channel access token** and **channel secret**.
 ![](https://i.imgur.com/cWb9ShR.jpg)
 
-3. Input `$ ./changetoken.sh` under the path:/root.
+3. Run `$ ./changetoken.sh` under the path:/root.
 
-4. Go in to **invoicehero** folder. Then, input `$ python3.9 manage.py runserver`.
+4. Go in to **invoicehero** folder. Then, run `$ python3.9 manage.py runserver`.
 
 5. Wait until it shows the following message:
 

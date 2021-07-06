@@ -267,7 +267,7 @@ print(req.text)
 1. Go back to terminal which you've run `$ docker run -it tim50687/final_project`.
 
 2. Find changetoken.sh in /root. And change **abc** with your **channel access token** and **channel secret**.
-* If your **channel access token** and **channel secret** have **/**, you need to add a **\\** before every **/**. 
+* Before changing, if your **channel access token** and **channel secret** have **/**, you need to add a **\\** before every **/**. 
 ![](https://i.imgur.com/Gy8R4Od.jpg)
 ![](https://i.imgur.com/cWb9ShR.jpg)
 

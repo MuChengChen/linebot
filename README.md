@@ -269,13 +269,15 @@ print(req.text)
 2. Find changetoken.sh in /root. And change abc with your **channel secret** and **channel access token**.
 ![](https://i.imgur.com/cWb9ShR.jpg)
 
-3. Go in to **invoicehero** folder. Then, input `$ python3.9 manage.py runserver`.
+3. Input `$ ./changetoken.sh` under the path:/root.
 
-4. Wait until it shows the following message:
+4. Go in to **invoicehero** folder. Then, input `$ python3.9 manage.py runserver`.
+
+5. Wait until it shows the following message:
 
 ![](https://i.imgur.com/xWbwovH.jpg)
 
-5. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
+6. Go back to Webhook URL, click the button "Verify", Line Bot will work if succeed.
 
 ![](https://i.imgur.com/7J7cVVJ.jpg)
 

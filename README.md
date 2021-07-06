@@ -162,7 +162,10 @@ print(req.text)
 ## Getting Started with docker
 
 ### Docker container website
-https://hub.docker.com/repository/docker/tim50687/linebot_final_project
+https://hub.docker.com/repository/docker/tim50687/linebot_final
+
+### Dockerfile
+https://hackmd.io/mRcfgf36So62x0v8V9UlRQ?view
 
 ### Prerequisite
 * Install docker in your system
@@ -263,11 +266,10 @@ print(req.text)
 * Revise the code and Execute Linebot APP
 1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`.
 
-2. Go to finalproject folder in invoicehero folder and open setting.py, change line 24 and 25 to users' channel secret and channel access token.
+2. Find changetoken.sh in /root. And change abc with your **channel secret** and **channel access token**.
+![](https://i.imgur.com/cWb9ShR.jpg)
 
-![](https://i.imgur.com/PhfB0Ju.jpg)
-
-3. Go back to invoicehero folder. Then, input `$ python3.9 manage.py runserver`.
+3. Go in to **invoicehero** folder. Then, input `$ python3.9 manage.py runserver`.
 
 4. Wait until it shows the following message:
 

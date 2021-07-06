@@ -267,6 +267,7 @@ print(req.text)
 1. Go back to terminal which you've run `$ docker run -it tim50687/final_project_linebot`.
 
 2. Find changetoken.sh in /root. And change **abc** with your **channel access token** and **channel secret**.
+* if your **channel access token** and **channel secret** have **/**, you need to add a \ before it. EX.change desf/fds to desf\/fds.
 ![](https://i.imgur.com/cWb9ShR.jpg)
 
 3. Run `$ ./changetoken.sh` under the path:/root.

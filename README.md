@@ -266,7 +266,7 @@ print(req.text)
 * Revise the code and Execute Linebot APP
 1. Go back to terminal which you've run `$ docker run -it tim50687/linebot_final_project`.
 
-2. Find changetoken.sh in /root. And change abc with your **channel secret** and **channel access token**.
+2. Find changetoken.sh in /root. And change **abc** with your **channel access token** and **channel secret**.
 ![](https://i.imgur.com/cWb9ShR.jpg)
 
 3. Input `$ ./changetoken.sh` under the path:/root.

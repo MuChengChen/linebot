@@ -34,7 +34,7 @@ $ pip install line-bot-sdk
 ```
 * Git clone this project.
 * Create a linebot account 
-1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. It will be used later.
+1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. They will be used later.
 2. Go to '回應設定' in your LINE Official Account Manager, close '自動回應訊息' and open 'Webhook'.
 
 <img src="https://i.imgur.com/CdcdXuu.jpg" width="40%"/> <img src="https://i.imgur.com/Szh55m5.jpg" width="40%"/>
@@ -171,7 +171,7 @@ https://hackmd.io/mRcfgf36So62x0v8V9UlRQ?view
 * Install docker in your system
 * Open terminal and run `$ docker pull tim50687/final_project_linebot`
 * Create a linebot account 
-1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. It will be used later.
+1. Copy the **channel secret** and **channel access token** of your account's basic setting to a notebook. They will be used later.
 2. Go to '回應設定' in your LINE Official Account Manager, close '自動回應訊息' and open 'Webhook'.
 
 <img src="https://i.imgur.com/CdcdXuu.jpg" width="40%"/> <img src="https://i.imgur.com/Szh55m5.jpg" width="40%"/>
